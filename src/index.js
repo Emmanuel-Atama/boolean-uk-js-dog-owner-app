@@ -20,9 +20,7 @@ function renderDogsList(dogs) {
     const name = dog.name
 
     const listEl = document.createElement("li")
-
     listEl.className = "dogs-list__button"
-
     listEl.innerText = name
 
     //Add Even Listener To Each List
@@ -54,6 +52,31 @@ const h2El = document.createElement("h2")
     mainSectionEl.append(imageEl)
 }
 
+function renderBioSection(bio) {
+  const containerEl = document.createElement("div")
+  containerEl.className = "main__dog-section__desc"
+
+  const headingEl = document.createElement("h3")
+  headingEl.innerText = "Bio"
+
+  containerEl.append(headingEl)
+
+  const paragraphEl = document.createElement("p")
+  paragraphEl.innerText = bio
+
+  containerEl.append(paragraphEl)
+
+  return containerEl
+
+
+  function renderBehaviourSection(behaviour) {
+    // console.log("Inside renderBehaviourSection: ", behaviour);
+  
+    const containerEl = document.createElement("div");
+    containerEl.className = "main__dog-section__btn";
+  
+    return containerEl;
+  }
 
 
 // function createCardElement(dog) {
