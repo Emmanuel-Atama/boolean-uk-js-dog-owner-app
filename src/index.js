@@ -12,6 +12,7 @@ console.log(data);
 // WRITE YOUR CODE BELOW!
 
 const dogListEl = document.querySelector(".dogs-list")
+const mainSectionEl =  document.querySelector(".main__dog-section")
 
 function renderDogsList(dogs) {
   for (let i = 0; i < dogs.length; i++) {
@@ -24,26 +25,26 @@ function renderDogsList(dogs) {
 
     listEl.innerText = name
 
-    listEl.addEventListener("click", () => {console.log("OnClick inside renderDogsList: ", dog)
+    //Add Even Listener To Each List
+    listEl.addEventListener("click", () => {
+      console.log("OnClick inside renderDogsList: ", dog)
   
     renderMainCard(dog)
   })
 
     dogListEl.append(listEl)
   }
-  return listEl
 }
-const CreateDogsList = renderDogsList(data)
 
+renderDogsList(data)
 
-const mainSectionEl =  document.querySelector(".main__dog-section")
 
 function renderMainCard(dog) {
 mainSectionEl.innerHTML = ""
 
 const h2El = document.createElement("h2")
  h2El.innerText = dog.name
- mainSectionEl.append = (h2El)
+ mainSectionEl.append(h2El)
 
  const imageEl = document.createElement("img")
  imageEl.setAttribute("height", 300)
