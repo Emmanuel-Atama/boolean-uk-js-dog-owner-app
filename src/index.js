@@ -22,7 +22,7 @@ function createDogsListItem(dogs) {
     bodyEl.append(headerEl);
 
     const titleEl = document.querySelector("h1");
-    titleEl.innerText = "";
+    titleEl.innerText = "The Show off Dog Owner's App";
     headerEl.append(titleEl);
 
     const ulEl = document.querySelector("ul");
@@ -33,8 +33,12 @@ function createDogsListItem(dogs) {
     listEl.className = "dogs-list__button dogs-list__button--add";
     const buttonEl = document.createElement("button");
     buttonEl.innerText = dogs.name;
-
     listEl.append(buttonEl);
+
+    // document.listEl.addEventListener('click', function(data) {
+    //   // console.log(data)
+    //  })
+     
 
     // console.log("Dogs Name: ", dogs.name);
     ulEl.append(listEl);
