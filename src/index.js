@@ -11,45 +11,28 @@ console.log(data);
 
 // WRITE YOUR CODE BELOW!
 
-const bodyEl = document.querySelector("body");
+const dogListEl = document.querySelector(".dogs-list")
 
 function createDogsListItem(dogs) {
-  for (let i = 0; i < data.length; i++) {
-    const dogs = data[i];
-    // console.log("Inside Dog's Data: ", dogs);
+  for (let i = 0; i < dogs.length; i++) {
+    const dog = dogs[i]
+    // console.log("Inside Dog's Data: ", dogs)
 
-    const headerEl = document.querySelector("header");
-    bodyEl.append(headerEl);
+    const name = dog.name
+    const listEl = document.createElement("li")
 
-    const titleEl = document.querySelector("h1");
-    titleEl.innerText = "The Show off Dog Owner's App";
-    headerEl.append(titleEl);
+    listEl.className = "dogs-list__button"
 
-    const ulEl = document.querySelector("ul");
-    ulEl.className = "dogs-list";
-    headerEl.append(ulEl);
+    listEl.innerText = name
 
-    const listEl = document.createElement("li");
-    listEl.className = "dogs-list__button dogs-list__button--add";
-    const buttonEl = document.createElement("button");
-    buttonEl.innerText = dogs.name;
-    listEl.append(buttonEl);
-
-    // document.listEl.addEventListener('click', function(data) {
-    //   // console.log(data)
-    //  })
-     
-
-    // console.log("Dogs Name: ", dogs.name);
-    ulEl.append(listEl);
+    dogListEl.append(listEl)
   }
-  return;
+  return listEl
 }
-const dogsOwnerAppData = createDogsListItem(data[0]);
-// console.log("inside dogsOnwerAppData: ", dogsOwnerAppData);
+const CreateDogsList = createDogsListItem(data)
 
-const mainEl = document.querySelector("main");
-bodyEl.append(mainEl);
+
+const SectionEl =  document.querySelector(".main__dog-section");
 
 function createCardElement(dog) {
   
