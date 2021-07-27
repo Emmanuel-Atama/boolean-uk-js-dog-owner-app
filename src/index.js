@@ -92,7 +92,15 @@ emEl.innerText = "Is Naughty?"
     return containerEl;
   }
 
-
+function renderFormSection (form) {
+  const mainSectionEl =  document.querySelector(".main__dog-section")
+  const titleEl = document.createElement("h2")
+  titleEl.innerText("Add a new Dog")
+  mainSectionEl.append(titleEl)
+  const formEl = document.createElement("form")
+  formEl.className = "form"
+  mainSectionEl.append(formEl)
+}
 // function createCardElement(dog) {
   
 //     const sectionEl = document.querySelector("section");
