@@ -50,31 +50,45 @@ const h2El = document.createElement("h2")
     const imageSrc = dog.image
     imageEl.src = imageSrc
     mainSectionEl.append(imageEl)
+    const containerEl = document.createElement("div")
+    containerEl.className = "main__dog-section__desc"
+  mainSectionEl.append(containerEl)
+  
+    const headingEl = document.createElement("h3")
+    headingEl.innerText = "Bio"
+    containerEl.append(headingEl)
+  
+    const paragraphEl = document.createElement("p")
+    paragraphEl.innerText = dog.bio
+    containerEl.append(paragraphEl)
+
+    renderBehaviourSection(data)
 }
-
-function renderBioSection(bio) {
-  const containerEl = document.createElement("div")
-  containerEl.className = "main__dog-section__desc"
-
-  const headingEl = document.createElement("h3")
-  headingEl.innerText = "Bio"
-
-  containerEl.append(headingEl)
-
-  const paragraphEl = document.createElement("p")
-  paragraphEl.innerText = bio
-
-  containerEl.append(paragraphEl)
-
-  return containerEl
-
 
   function renderBehaviourSection(behaviour) {
     // console.log("Inside renderBehaviourSection: ", behaviour);
   
-    const containerEl = document.createElement("div");
-    containerEl.className = "main__dog-section__btn";
-  
+    const containerEl = document.createElement("div")
+    containerEl.className = "main__dog-section__btn"
+    mainSectionEl.append(containerEl)
+
+const paragraphEl = document.createElement("p")
+containerEl.append(paragraphEl)
+const emEl = document.createElement("em")
+paragraphEl.append(emEl)
+emEl.innerText = "Is Naughty?"
+
+  const buttonEl = document.createElement("button")
+  containerEl.append(buttonEl)
+  containerEl.innerText = isGoodDog
+  const dogBehaviour = behaviour.isGoodDog
+    if (dogBehaviour){
+      dogBehaviour = "Good Dog"
+    } else {
+      dogBehaviour = "Bad Dog"
+    }
+    const row = `${dogBehaviour}\n`
+    isGoodDog = dogBehaviour
     return containerEl;
   }
 
